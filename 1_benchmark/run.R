@@ -10,7 +10,7 @@
 #  need to run as ./run.R to get the right dir structure, otherwise getwd()
 #  will be inconsistent to dir structure
 #
-#  5 x 8 x 2.2 GHz, 2.6 hrs
+#  5 x 8 x 2.1 GHz, 2.6 hrs
 #  ~23G
 #
 

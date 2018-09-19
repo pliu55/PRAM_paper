@@ -17,7 +17,7 @@
 #
 #  - all actions will take place in output/
 #
-#  1 x 2.2 GHz, 13 mins
+#  1 x 2.1 GHz, 13 mins
 #  9.4 G total (saved + removed)
 #
 
