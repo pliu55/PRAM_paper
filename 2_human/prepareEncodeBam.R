@@ -5,7 +5,7 @@
 #
 #  download human ENCODE BAM and then index
 #
-#  30 x 2.2 GHz, ? hrs
+#  30 x 2.1 GHz, ~3 hrs
 #  ~ 500G
 #
 
