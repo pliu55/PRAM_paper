@@ -9,8 +9,8 @@
 #  need to run as ./run.R to get the right dir structure, otherwise getwd()
 #  will be inconsistent to dir structure
 #
-#  5 x 8 x 2.2 GHz, ?? hrs
-#  ~??G
+#  5 x 8 x 2.2 GHz, 4.3 hrs
+#  ~20 G
 #
 
 library(pram)
@@ -26,15 +26,17 @@ main <- function() {
 
         methods = c( 'plcf', 'plst', 'cfmg', 'stmg', 'cftc' ),
 
+        ## bamids need to be in the same order as previous run to make model ids
+        ## the same
         bamids = c(
-            'ENCFF044SJL', 'ENCFF048ODN', 'ENCFF125RAL', 'ENCFF207ZSA',
-            'ENCFF244ZQA', 'ENCFF263OLY', 'ENCFF306YQS', 'ENCFF315VHI',
-            'ENCFF343WEZ', 'ENCFF367VEP', 'ENCFF381BQZ', 'ENCFF428VBU',
-            'ENCFF444SCT', 'ENCFF521KYZ', 'ENCFF547YFO', 'ENCFF588YLF',
-            'ENCFF709IUX', 'ENCFF728JKQ', 'ENCFF739OVZ', 'ENCFF782IVX',
-            'ENCFF782TAX', 'ENCFF800YJR', 'ENCFF802TLC', 'ENCFF834ITU',
-            'ENCFF838JGD', 'ENCFF846WOV', 'ENCFF904OHO', 'ENCFF912SZP',
-            'ENCFF978ACT', 'ENCFF983FHE'
+            "ENCFF125RAL", "ENCFF739OVZ", "ENCFF802TLC", "ENCFF428VBU",
+            "ENCFF547YFO", "ENCFF782IVX", "ENCFF709IUX", "ENCFF244ZQA",
+            "ENCFF343WEZ", "ENCFF444SCT", "ENCFF315VHI", "ENCFF834ITU",
+            "ENCFF306YQS", "ENCFF521KYZ", "ENCFF800YJR", "ENCFF782TAX",
+            "ENCFF912SZP", "ENCFF207ZSA", "ENCFF846WOV", "ENCFF588YLF",
+            "ENCFF048ODN", "ENCFF381BQZ", "ENCFF044SJL", "ENCFF728JKQ",
+            "ENCFF367VEP", "ENCFF983FHE", "ENCFF904OHO", "ENCFF838JGD",
+            "ENCFF263OLY", "ENCFF978ACT"
         ),
 
       # methods = c( 'plst', 'stmg' ),
@@ -84,6 +86,9 @@ main <- function() {
 
     mclapply(prm$methods, selIgModel, prm,
              mc.cores=prm$njob_in_para)
+
+    unlink(prm$outbamdir, recursive=T, force=T)
+    unlink(prm$fout_ig, force=T)
 }
 
 
@@ -115,13 +120,16 @@ buildIgModel <- function(method, bamids, prm) {
 
 
 selIgModel <- function(method, prm) {
+    fin_gtf  = paste0(prm$outdir, 'tmp_', method, '.gtf')
     fsel_gtf = paste0(prm$outdir, method, '.gtf')
 
-    pram::selModel( fin_gtf  = paste0(prm$outdir, 'tmp_', method, '.gtf'),
+    pram::selModel( fin_gtf  = fin_gtf,
                     fout_gtf = fsel_gtf,
                     min_n_exon = prm$min_n_exon,
                     min_tr_len = prm$min_tr_len,
                     info_keys  = prm$info_keys )
+
+    unlink(fin_gtf, force=T)
 }
 
 system.time( main() )
