@@ -25,3 +25,9 @@ assume 2.1 GHz, 40 cores machine
 - Therefore, we cannot simply download BAM from ENCODE and run PRAM to reproduce
   the results reported in the paper.  Instead, I will provided the results.
 - If needed, I can upload the ~750G Bam to an FTP server 
+- the way to predict models by PRAM are the same as in human
+- selectiong by mpp and refseq, see manuscript
+<!--
+reported/ is from gata/86_4paper/
+-->
+   
