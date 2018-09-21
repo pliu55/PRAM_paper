@@ -9,6 +9,8 @@
 #  need to run as ./run.R to get the right dir structure, otherwise getwd()
 #  will be inconsistent to dir structure
 #
+#  have tested on newly downloaded BAM from ENCODE, all results are reproducible
+#
 #  5 x 8 x 2.2 GHz, 4.3 hrs
 #  ~20 G
 #
