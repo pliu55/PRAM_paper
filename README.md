@@ -29,7 +29,7 @@ other R scripts.
 
 To obtain this repository, please use the follow command
 
-```
+```bash
 git clone https://github.com/pliu55/pram_paper
 ```
 
@@ -51,7 +51,7 @@ and files:
 To reproduce PRAM's results, we need to prepare required software and genomic
 files first with the following commands: 
 
-```
+```bash
 cd 0_setup/
 ./run.R
 ```
@@ -77,7 +77,7 @@ Key results for the 'noise-free' benchmark test are in the folder
 `1_benchmark/reported/` with their descriptions listed in the table below
 
 | file name | description |
-|:---------:|:-----------:|
+|-----------|-------------|
 | [target_transcript_ids.txt](1_benchmark/reported/target_transcript_ids.txt) | GENCODE v24 transcript IDs for the 1,256 target transcripts|
 | [plcf.gtf](1_benchmark/reported/plcf.gtf) | predicted transcript models by PRAM's __pooling + Cufflinks__ method|
 | [plst.gtf](1_benchmark/reported/plst.gtf) | predicted transcript models by PRAM's __pooling + StringTie__ method|
