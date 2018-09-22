@@ -21,9 +21,9 @@ scripts to reproduce them on user's local machine.  We provided results for
 ['noise-free' benchmark](#Benchmark), 
 [human master set transcript models](#Human-master-set), and 
 [mouse hematopoietic transcript models](#Mouse-hematopoietic-system). 
-In the sections below, We will describe each of them in details.  
-To reproduce these results, we recommand to run all the __R__ scripts in 
-__Linux__, where we have tested their reproducibility.  Also, please make sure 
+In the sections below, We will describe each of them in details.  To reproduce 
+these results, we recommand to run all the __R__ scripts in __Linux__, where 
+we have tested their reproducibility.  Also, please make sure 
 to [setup dependent files](#Setup-dependent-files) first before running any 
 other R scripts.
 
@@ -34,6 +34,22 @@ git clone https://github.com/pliu55/pram_paper
 ```
 
 ## <a name='Setup-dependent-files'></a> Setup dependent files
+
+To reproduce PRAM's results, we need to prepare required software and genomic
+files first with the following commands: 
+
+```
+cd 0_setup/
+./run.R
+```
+
+The [run.R](0_setup/run.R) script will
+- install latest PRAM package
+- download and setup model-building software:
+  - Cufflinks
+  - StringTie
+  - TACO
+
 
 ## <a name='Benchmark'></a> Benchmark
 
