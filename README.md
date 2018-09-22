@@ -77,7 +77,7 @@ Key results for the 'noise-free' benchmark test are in the folder
 
 | file name | description |
 |:---------:|:-----------:|
-| [target_transcript_ids.txt](1_benchmark/reported/target_transcript_ids_txt) | GENCODE v24 transcript IDs for the 1,256 target transcripts|
+| [target_transcript_ids.txt](1_benchmark/reported/target_transcript_ids.txt) | GENCODE v24 transcript IDs for the 1,256 target transcripts|
 | [plcf.gtf](1_benchmark/reported/plcf.gtf) | predicted transcript models by PRAM's __pooling + Cufflinks__ method|
 | [plst.gtf](1_benchmark/reported/plst.gtf) | predicted transcript models by PRAM's __pooling + StringTie__ method|
 | [cfmg.gtf](1_benchmark/reported/cfmg.gtf) | predicted transcript models by PRAM's __Cufflinks + Cuffmerge__ method|
