@@ -111,7 +111,8 @@ cd 1_benchmark/
 The script [run.R](1_benchmark/run.R) will:
 - download 'noise-free' input RNA-seq BAM files to `1_benchmark/input/`
 - predict transcript models by PRAM's five meta-assembly methods and save 
-  prediction results as GTF files in `1_benchmark/output/`. Files are named in
+  prediction results as GTF files in `1_benchmark/output/`. Files will be 
+  named in
   the same way as in the [table](#Noise-free-benchmark-key-results) above
 - compare transcript models with GENCODE annotation and save the evaluation
   results in `1_benchmark/output/model_eval.tsv`
