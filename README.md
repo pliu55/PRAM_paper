@@ -73,7 +73,7 @@ saved in `0_setup/output/`.
 
 ## <a name='Noise-free-benchmark'></a> 'Noise-free' benchmark
 
-### Key results
+### <a name='Noise-free-benchmark-key-results'></a> Key results
 
 Results for the 'noise-free' benchmark test are in the folder 
 `1_benchmark/reported/` with their descriptions listed in the table below
@@ -111,7 +111,8 @@ cd 1_benchmark/
 The script [run.R](1_benchmark/run.R) will:
 - download 'noise-free' input RNA-seq BAM files to `1_benchmark/input/`
 - predict transcript models by PRAM's five meta-assembly methods and save 
-  prediction results in `1_benchmark/output/`
+  prediction results as GTF files in `1_benchmark/output/`. Files are named in
+  the same way as in the [table](#Noise-free-benchmark-key-results) above
 - compare transcript models with GENCODE annotation and save the evaluation
   results in `1_benchmark/output/model_eval.tsv`
 
@@ -124,7 +125,7 @@ exceed the number of available cores.
 
 ## <a name='Human-master-set'></a> Human master set
 
-### Key results
+### <a name='Human-master-set-key-results'></a> Key results
 
 Five meta-assembly methods of PRAM were applied to predict intergenic 
 transcript models based on thirty human ENCODE RNA-seq datasets.  All five 
@@ -155,7 +156,7 @@ cd 2_human/
 ./run.R
 ```
 
-The script [prepareEncodeBam.R](2_human/prepareEncodeBam.R) will download the 
+The script [prepareEncodeBam.R](2_human/prepareEncodeBam.R) will download
 thirty human RNA-seq BAM files from ENCODE, index and save them in 
 `2_human/input/`.  It will take ~500 GB hard drive space and cost ~3 hours 
 using thirty 2.1 GHz CPUs.  You can adjust the number of running CPUs by the 
@@ -166,7 +167,9 @@ The script [run.R](2_human/run.R) will predict transcript models in human
 intergenic regions based on the downloaded BAM files.  It will take ~20 GB 
 space and ~4.5 hours using forty 2.1 GHz CPUs.  To customize the number of 
 running CPUs for your own machine is the same as in 
-[reproducing benchmark results](#Noise-free-benchmark-reproducibility)
+[reproducing benchmark results](#Noise-free-benchmark-reproducibility). 
+Predicted models will be saved as GTF files in `2_human/output/`.  Files will
+be named in the same way as the [table](#Human-master-set-key-results) above.
 
 
 ## <a name='Mouse-hematopoietic-system'></a> Mouse hematopoietic system
