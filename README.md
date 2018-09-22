@@ -1,10 +1,35 @@
-# pram_paper
+PRAM Manuscript Key Results and Scripts for Reproducibility
+===========================================================
 
-Linux only
+Table of Contents
+-----------------
+
+* [Introduction](#Introduction)
+* [Download](#Download)
+* [Setup dependent files](#Setup-dependent-files)
+* [Benchmark](#Benchmark)
+* [Human master set](#Human-master-set)
+* [Mouse hematopoietic system](#Mouse-hematopoietic-system)
+* [Reference](#Reference)
+* [Contact](#Contact)
+
+* * *
+
+## <a name='Introduction'></a> Introduction
+
+## <a name='Download'></a> Download
+
+To download this repository, please use the follow command on __Linux__
+
+```
+git clone https://github.com/pliu55/pram_paper
+```
+
+## <a name='Setup-dependent-files'></a> Setup dependent files
+
+## <a name='Benchmark'></a> Benchmark
+
 assume 2.1 GHz, 40 cores machine
-
-## install PRAM and download genomic files
-`0_setup/`
 
 `1_benchmark/`
   input/ bam is from `repe/known/12_poolTgtBam/`
@@ -15,8 +40,14 @@ assume 2.1 GHz, 40 cores machine
   - eval: meta methods from `known/14_evalMdl/mode.tsv`
   - tgtids: tgtids from `known/09_selTgt.tsv`
 
+## <a name='Human-master-set'></a> Human master set
+
+assume 2.1 GHz, 40 cores machine
+
 `2_human/`
   `reported/`: `known/23_selIgMdl/`
+
+## <a name='Mouse-hematopoietic-system'></a> Mouse hematopoietic system
 
 `3_mouse/`:
 - my run aligned FASTQ with GENCODE vM9
@@ -30,4 +61,13 @@ assume 2.1 GHz, 40 cores machine
 <!--
 reported/ is from gata/86_4paper/
 -->
-   
+ 
+
+## <a name="Reference"></a> Reference
+
+PRAM identifies novel hematopoietic transcripts. Peng Liu, Alexandra A. Soukup, Emery H. Bresnick, Colin N. Dewey, and Sündüz Keleş. Manuscript in preparation.
+
+
+## <a name="Contact"></a> Contact
+
+Got a question? Please report it at the [issues tab](https://github.com/pliu55/pram_paper/issues) in this repository.
