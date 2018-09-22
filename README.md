@@ -56,7 +56,7 @@ cd 0_setup/
 ./run.R
 ```
 
-The [run.R](0_setup/run.R) script will download and install:
+The script [run.R](0_setup/run.R) will download and install:
 - the latest PRAM package
 - transcript-building software:
   - Cufflinks
@@ -73,7 +73,9 @@ saved in `0_setup/output/`.
 
 ## <a name='Noise-free-benchmark'></a> 'Noise-free' benchmark
 
-Key results for the 'noise-free' benchmark test are in the folder 
+### Key results
+
+Results for the 'noise-free' benchmark test are in the folder 
 `1_benchmark/reported/` with their descriptions listed in the table below
 
 | file name | description |
@@ -97,6 +99,8 @@ Key results for the 'noise-free' benchmark test are in the folder
   - tgtids: tgtids from `known/09_selTgt.tsv`
 -->
 
+### <a name='Noise-free-benchmark-reproducibility'></a> Reproducibility
+
 To reproduce the model prediction results, run the follow command:
 
 ```bash
@@ -104,25 +108,27 @@ cd 1_benchmark/
 ./run.R
 ```
 
-The [run.R](1_benchmark/run.R) script will:
+The script [run.R](1_benchmark/run.R) will:
 - download 'noise-free' input RNA-seq BAM files to `1_benchmark/input/`
 - predict transcript models by PRAM's five meta-assembly methods and save 
   prediction results in `1_benchmark/output/`
 - compare transcript models with GENCODE annotation and save the evaluation
   results in `1_benchmark/output/model_eval.tsv`
 
-It requires ~23 GB hard drive space and takes 
-~3 hours using forty 2.1 GHz CPUs. To adjust to the running CPUs on your own 
-machine, please edit the `njob_in_para` and `nthr_per_job` variables in 
+The script [run.R](1_benchmark/run.R) requires ~23 GB hard drive space and 
+takes ~3 hours using forty 2.1 GHz CPUs. To adjust to the running CPUs on your 
+own machine, please edit the `njob_in_para` and `nthr_per_job` variables in 
 [run.R](1_benchmark/run.R) to make sure `njob_in_para * nthr_per_job` do not
 exceed the number of available cores.
 
 
 ## <a name='Human-master-set'></a> Human master set
 
-GTF files of transcript models predicted based on the 30 human ENCODE RNA-seq 
-are saved in `2_human/reported/`.  We have applied PRAM's five meta-assembly 
-methods to make predictions:
+### Key results
+
+Five meta-assembly methods of PRAM were applied to predict intergenic 
+transcript models based on thirty human ENCODE RNA-seq datasets.  All five 
+prediction results are saved in `2_human/reported/`:
 
 | file name | PRAM method |
 |:---------:|-------------|
@@ -138,6 +144,30 @@ assume 2.1 GHz, 40 cores machine
 `2_human/`
   `reported/`: `known/23_selIgMdl/`
 -->
+
+### Reproducibility 
+
+To reproduce the model prediction results, run the follow command:
+
+```bash
+cd 2_human/
+./prepareEncodeBam.R
+./run.R
+```
+
+The script [prepareEncodeBam.R](2_human/prepareEncodeBam.R) will download the 
+thirty human RNA-seq BAM files from ENCODE, index and save them in 
+`2_human/input/`.  It will take ~500 GB hard drive space and cost ~3 hours 
+using thirty 2.1 GHz CPUs.  You can adjust the number of running CPUs by the 
+`njob_in_para` variable in [prepareEncodeBam.R](2_human/prepareEncodeBam.R).
+
+
+The script [run.R](2_human/run.R) will predict transcript models in human 
+intergenic regions based on the downloaded BAM files.  It will take ~20 GB 
+space and ~4.5 hours using forty 2.1 GHz CPUs.  To customize the number of 
+running CPUs for your own machine is the same as in 
+[reproducing benchmark results](#Noise-free-benchmark-reproducibility)
+
 
 ## <a name='Mouse-hematopoietic-system'></a> Mouse hematopoietic system
 
