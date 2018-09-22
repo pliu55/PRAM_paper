@@ -36,22 +36,22 @@ main <- function() {
 
         hg_gnc_url = 'ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_human/release_24/gencode.v24.annotation.gtf.gz',
 
-      # mm_gnc_url = 'ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_mouse/release_M9/gencode.vM9.annotation.gtf.gz',
+     ## mm_gnc_url = 'ftp://ftp.sanger.ac.uk/pub/gencode/Gencode_mouse/release_M9/gencode.vM9.annotation.gtf.gz',
 
         hg_genome = 'hg38',
-      # mm_genome = 'mm10',
+     ## mm_genome = 'mm10',
 
         hg_genome_url = 'ftp://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/hg38.chromFa.tar.gz',
-      # mm_genome_url = 'ftp://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/chromFa.tar.gz',
+     ## mm_genome_url = 'ftp://hgdownload.soe.ucsc.edu/goldenPath/mm10/bigZips/chromFa.tar.gz',
 
         hg_chroms = paste0('chr', c(1:22, 'X')),
-      # mm_chroms = paste0('chr', c(1:19, 'X', 'Y')),
+     ## mm_chroms = paste0('chr', c(1:19, 'X', 'Y')),
 
         outdir      = 'output/',
         fout_hg_gtf = 'hg38_exon.gtf',
-      # fout_mm_gtf = 'mm10_exon.gtf',
+     ## fout_mm_gtf = 'mm10_exon.gtf',
         fout_hg_fa  = 'hg38_cufflinks.fa'
-      # fout_mm_fa  = 'mm10_cufflinks.fa'
+     ## fout_mm_fa  = 'mm10_cufflinks.fa'
     )
 
     if ( ! file.exists(prm$outdir) ) dir.create(prm$outdir, recursive=T)
@@ -62,13 +62,13 @@ main <- function() {
   # devtools:install_github(prm$repo)
 
     ## setup external software
-    setupSoftware(prm)
+  # setupSoftware(prm)
 
     ## setup GENCODE
     setupGENCODE(prm)
 
     ## setup genomes for Cufflinks
-    setupGenome(prm)
+  # setupGenome(prm)
 }
 
 
@@ -79,8 +79,8 @@ setupGenome <- function(prm) {
     cat("setup", prm$hg_genome, "genome\n")
     downloadAndPrepGenome(prm$hg_genome, prm$hg_genome_url, prm$fout_hg_fa)
 
-  # cat("setup", prm$mm_genome, "genome\n")
-  # downloadAndPrepGenome(prm$mm_genome, prm$mm_genome_url, prm$fout_mm_fa)
+ ## cat("setup", prm$mm_genome, "genome\n")
+ ## downloadAndPrepGenome(prm$mm_genome, prm$mm_genome_url, prm$fout_mm_fa)
 }
 
 
@@ -115,8 +115,8 @@ setupGENCODE <- function(prm) {
     cat("setup human GENCODE GTF\n")
     downloadAndExtractExon(prm$hg_gnc_url, prm$hg_chroms, prm$fout_hg_gtf)
 
-  # cat("setup mouse GENCODE GTF\n")
-  # downloadAndExtractExon(prm$mm_gnc_url, prm$mm_chroms, prm$fout_mm_gtf)
+ ## cat("setup mouse GENCODE GTF\n")
+ ## downloadAndExtractExon(prm$mm_gnc_url, prm$mm_chroms, prm$fout_mm_gtf)
 }
 
 
@@ -160,7 +160,7 @@ downloadAndExtractExon <- function(url, chroms, fout) {
 
     if ( ! file.exists(fout) ) {
         export( readGFF( fgz,
-                         tags   = c('gene_id'),
+                         tags   = c('gene_id', 'transcript_id'),
                          filter = list( type  = c('exon'),
                                         seqid = chroms ) ),
                 fout,
