@@ -6,7 +6,7 @@ Table of Contents
 
 * [Introduction](#Introduction)
 * [Setup dependent files](#Setup-dependent-files)
-* [Benchmark](#Benchmark)
+* ['Noise-free' benchmark](#Noise-free-benchmark)
 * [Human master set](#Human-master-set)
 * [Mouse hematopoietic system](#Mouse-hematopoietic-system)
 * [Reference](#Reference)
@@ -18,7 +18,7 @@ Table of Contents
 
 This repository contains key results reported in PRAM's manuscript and __R__ 
 scripts to reproduce them on user's local machine.  We provided results for 
-['noise-free' benchmark](#Benchmark), 
+['noise-free' benchmark](#Noise-free-benchmark), 
 [human master set transcript models](#Human-master-set), and 
 [mouse hematopoietic transcript models](#Mouse-hematopoietic-system). 
 In the sections below, We will describe each of them in details.  To reproduce 
@@ -70,20 +70,20 @@ dependent software and files will be saved in `0_setup/output/`, which will
 take about 9G space.
 
 
-## <a name='Benchmark'></a> Benchmark
+## <a name='Noise-free-benchmark'></a> 'Noise-free' benchmark
 
 Key results for the 'noise-free' benchmark test are in the folder 
-`1_benchmark/reported/` and the table below list their descriptions
+`1_benchmark/reported/` with their descriptions listed in the table below
 
 | file name | description |
-|:---------:|:------------|
-| `target_transcript_ids.txt.gz` | GENCODE v24 transcript IDs for the 1,256 known transcripts|
-| `plcf.gtf.gz` | predicted transcript models by PRAM's __pooling + Cufflinks__ method|
-| `plst.gtf.gz` | predicted transcript models by PRAM's __pooling + StringTie__ method|
-| `cfmg.gtf.gz` | predicted transcript models by PRAM's __Cufflinks + Cuffmerge__ method|
-| `stmg.gtf.gz` | predicted transcript models by PRAM's __StringTie + merging__ method|
-| `cftc.gtf.gz` | predicted transcript models by PRAM's __Cufflinks + TACO__ method|
-| `model_eval.tsv` | precision and recall for transcript models predicted by the above five methods in terms of __exon nucleotide__ (row name: __exon_nuc__), __individual junction__ (row name: __indi_jnc__), and __transcript structure__ (row name: __tr_jnc__) |
+|:---------:|:-----------:|
+| [target_transcript_ids.txt](1_benchmark/target_transcript_ids_txt) | GENCODE v24 transcript IDs for the 1,256 target transcripts|
+| [plcf.gtf](1_benchmark/plcf.gtf) | predicted transcript models by PRAM's __pooling + Cufflinks__ method|
+| [plst.gtf](1_benchmark/plst.gtf) | predicted transcript models by PRAM's __pooling + StringTie__ method|
+| [cfmg.gtf](1_benchmark/cfmg.gtf) | predicted transcript models by PRAM's __Cufflinks + Cuffmerge__ method|
+| [stmg.gtf](1_benchmark/stmg.gtf) | predicted transcript models by PRAM's __StringTie + merging__ method|
+| [cftc.gtf](1_benchmark/cftc.gtf) | predicted transcript models by PRAM's __Cufflinks + TACO__ method|
+| [model_eval.tsv](1_benchmark/model_eval.tsv) | precision and recall for transcript models predicted by the above five methods in terms of __exon nucleotide__ (row name: `exon_nuc`), __individual junction__ (row name: `indi_jnc`), and __transcript structure__ (row name: `tr_jnc`) |
 
 <!--
 assume 2.1 GHz, 40 cores machine
