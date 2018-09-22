@@ -43,8 +43,8 @@ and files:
 - `2_human/`: 
   - `reported/`: results for human master set transcript models
   - `prepareEncodeBam.R` and `run.R`: scripts for reproducing the results
-- `3_mouse/`: 
-  - `reported/`: results for mouse hematopoitic system
+- [3_mouse/](3_mouse): 
+  - [reported/](3_mouse/reported): results for mouse hematopoitic system
 
 ## <a name='Setup-dependent-files'></a> Setup dependent files
 
@@ -56,7 +56,7 @@ cd 0_setup/
 ./run.R
 ```
 
-The [run.R script](0_setup/run.R) will download and install:
+The [run.R](0_setup/run.R) script will download and install:
 - the latest PRAM package
 - transcript-building software:
   - Cufflinks
