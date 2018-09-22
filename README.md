@@ -5,7 +5,6 @@ Table of Contents
 -----------------
 
 * [Introduction](#Introduction)
-* [Download](#Download)
 * [Setup dependent files](#Setup-dependent-files)
 * [Benchmark](#Benchmark)
 * [Human master set](#Human-master-set)
@@ -17,9 +16,18 @@ Table of Contents
 
 ## <a name='Introduction'></a> Introduction
 
-## <a name='Download'></a> Download
+This repository contains key results reported in PRAM's manuscript and __R__ 
+scripts to reproduce them on user's local machine.  We provided results for 
+['noise-free' benchmark](#Benchmark), 
+[human master set transcript models](#Human-master-set), and 
+[mouse hematopoietic transcript models](#Mouse-hematopoietic-system). 
+In the sections below, We will describe each of them in details.  
+To reproduce these results, we recommand to run all the __R__ scripts in 
+__Linux__, where we have tested their reproducibility.  Also, please make sure 
+to [setup dependent files](#Setup-dependent-files) first before running any 
+other R scripts.
 
-To download this repository, please use the follow command on __Linux__
+To download this repository, please use the follow command
 
 ```
 git clone https://github.com/pliu55/pram_paper
