@@ -43,8 +43,8 @@ and files:
 - `2_human/`: 
   - `reported/`: results for human master set transcript models
   - `prepareEncodeBam.R` and `run.R`: scripts for reproducing the results
-- [3_mouse/](3_mouse): 
-  - [reported/](3_mouse/reported): results for mouse hematopoitic system
+- `3_mouse/`: 
+  - `reported/`: results for mouse hematopoitic system
 
 ## <a name='Setup-dependent-files'></a> Setup dependent files
 
@@ -65,9 +65,10 @@ The [run.R](0_setup/run.R) script will download and install:
 - human gene annotation from GENCODE version v24
 - human genome version hg38
 
-This script will take about 10 minutes on a 2.2 GHz machine.  All the 
-dependent software and files will be saved in `0_setup/output/`, which will 
-take about 9G space.
+This script requires ~ 9 GB hard drive space and takes ~ 10 minutes using a 
+single 2.1 GHz CPU.  All the dependent software and files will be 
+saved in `0_setup/output/`.
+
 
 
 ## <a name='Noise-free-benchmark'></a> 'Noise-free' benchmark
@@ -97,6 +98,27 @@ assume 2.1 GHz, 40 cores machine
   - eval: meta methods from `known/14_evalMdl/mode.tsv`
   - tgtids: tgtids from `known/09_selTgt.tsv`
 -->
+
+To reproduce the model prediction results, run the follow command:
+
+```bash
+cd 1_benchmark/
+./run.R
+```
+
+The [run.R](1_benchmark/run.R) script will:
+- download 'noise-free' input RNA-seq BAM files to `1_benchmark/input/`
+- predict transcript models by PRAM's five meta-assembly methods and save 
+  prediction results in `1_benchmark/output/`
+- compare transcript models with GENCODE annotation and save the evaluation
+  results in `1_benchmark/output/model_eval.tsv`
+
+It requires ~23 GB hard drive space and takes 
+~3 hours using forty 2.1 GHz CPUs. To adjust to the running CPUs on your own 
+machine, please edit the `njob_in_para` and `nthr_per_job` variables in 
+[run.R](1_benchmark/run.R) to make sure `njob_in_para * nthr_per_job` do not
+exceed the number of available cores.
+
 
 ## <a name='Human-master-set'></a> Human master set
 
