@@ -48,7 +48,7 @@ main <- function() {
         taco      = paste0(setupdir, 'taco-v0.7.0.Linux_x86_64/taco_run'),
         fgnmfa    = paste0(setupdir, 'hg38_cufflinks.fa'),
 
-        ftgtids = paste0(currdir, '/reported/target_transcript_ids.txt.gz'),
+        ftgtids = paste0(currdir, '/reported/target_transcript_ids.txt'),
         indir   = paste0(currdir, '/input/'),
         outdir  = paste0(currdir, '/output/'),
         fout    = paste0(currdir, '/output/model_eval.tsv')
