@@ -1,4 +1,4 @@
-PRAM Manuscript Key Results and Scripts for Reproducibility
+PRAM manuscript key results and scripts for reproducibility
 ===========================================================
 
 Table of Contents
@@ -22,7 +22,7 @@ scripts to reproduce them on user's local machine.  We provided results for
 [human master set transcript models](#Human-master-set), and 
 [mouse hematopoietic transcript models](#Mouse-hematopoietic-system). 
 In the sections below, We will describe each of them in details.  To reproduce 
-these results, we recommand to run all the __R__ scripts in __Linux__, where 
+these results, we recommend to run all the __R__ scripts in __Linux__, where 
 we have tested their reproducibility.  Also, please make sure 
 to [setup dependent files](#Setup-dependent-files) first before running any 
 other R scripts.
@@ -40,8 +40,11 @@ and files:
 - `1_benchmark/` 
   - `reported/`: results for 'noise-free' benchmark
   - `run.R`: script for reproducing the results
-- `2_human/`: results and scripts for human master set transcript models
-- `3_mouse/`: results for mouse hematopoitic system
+- `2_human/`: 
+  - `reported/`: results for human master set transcript models
+  - `prepareEncodeBam.R` and `run.R`: scripts for reproducing the results
+- `3_mouse/`: 
+  - `reported/`: results for mouse hematopoitic system
 
 ## <a name='Setup-dependent-files'></a> Setup dependent files
 
@@ -53,7 +56,7 @@ cd 0_setup/
 ./run.R
 ```
 
-The [run.R](0_setup/run.R) script will download and install:
+The [run.R script](0_setup/run.R) will download and install:
 - the latest PRAM package
 - transcript-building software:
   - Cufflinks
@@ -68,6 +71,19 @@ take about 9G space.
 
 
 ## <a name='Benchmark'></a> Benchmark
+
+Key results for the 'noise-free' benchmark test are in the folder 
+`1_benchmark/reported/` and the table below list their descriptions
+
+| file name | description |
+|:---------:|:------------|
+| `target_transcript_ids.txt.gz` | GENCODE v24 transcript IDs for the 1,256 known transcripts|
+| `plcf.gtf.gz` | predicted transcript models by PRAM's __pooling + Cufflinks__ method|
+| `plst.gtf.gz` | predicted transcript models by PRAM's __pooling + StringTie__ method|
+| `cfmg.gtf.gz` | predicted transcript models by PRAM's __Cufflinks + Cuffmerge__ method|
+| `stmg.gtf.gz` | predicted transcript models by PRAM's __StringTie + merging__ method|
+| `cftc.gtf.gz` | predicted transcript models by PRAM's __Cufflinks + TACO__ method|
+| `model_eval.tsv` | precision and recall for transcript models predicted by the above five methods in terms of __exon nucleotide__ (row name: __exon_nuc__), __individual junction__ (row name: __indi_jnc__), and __transcript structure__ (row name: __tr_jnc__) |
 
 <!--
 assume 2.1 GHz, 40 cores machine
