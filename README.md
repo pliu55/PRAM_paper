@@ -120,6 +120,18 @@ exceed the number of available cores.
 
 ## <a name='Human-master-set'></a> Human master set
 
+GTF files of transcript models predicted based on the 30 human ENCODE RNA-seq 
+are saved in `2_human/reported/`.  We have applied PRAM's five meta-assembly 
+methods to make predictions:
+
+| file name | PRAM method |
+|:---------:|-------------|
+| [plcf.gtf.gz](2_human/reported/plcf.gtf.gz) | pooling + Cufflinks   |
+| [plst.gtf.gz](2_human/reported/plst.gtf.gz) | pooling + StringTie   |
+| [cfmg.gtf.gz](2_human/reported/cfmg.gtf.gz) | Cufflinks + Cuffmerge |
+| [stmg.gtf.gz](2_human/reported/stmg.gtf.gz) | StringTie + merging   |
+| [cftc.gtf.gz](2_human/reported/cftc.gtf.gz) | Cufflinks + TACO      |
+
 <!--
 assume 2.1 GHz, 40 cores machine
 
