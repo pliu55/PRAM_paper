@@ -205,21 +205,20 @@ reported/ is from gata/86_4paper/
 The way to use PRAM to predict intergenic transcript models for mouse 
 hematopoietic system is the same as for [human master set](#Human-master-set).
 You can refer to the script [run.R](2_human/run.R) in 
-[human master set](#Human-master-set) for usage of PRAM. 
+[human master set](#Human-master-set) for the usage of PRAM. 
 
 We do not provide scripts for automatically reproducing the results because:
 - Some mouse ENCODE RNA-seq datasets do not have alignment BAM files 
   available, such as 
   [ENCSR000CLU](https://www.encodeproject.org/experiments/ENCSR000CLU/) and 
   [ENCSR000CLY](https://www.encodeproject.org/experiments/ENCSR000CLY/)
-- Some mouse ENCODE RNA-seq datasets have alignment BAM files available, such 
-  as, 
+- Some mouse ENCODE RNA-seq datasets have alignment BAM files available, such as
   [ENCSR000CHV](https://www.encodeproject.org/experiments/ENCSR000CHV/) and 
   [ENCSR000CHY](https://www.encodeproject.org/experiments/ENCSR000CHY/). 
   But they were based on GENCODE vM4, not vM9, which we used to define known 
   genes and intergenic regions.
-- The mouse RNA-seq alignment BAM file we generated took ~750 GB hard drive 
-  space, which would take a long time for user to download.
+- The mouse RNA-seq alignment BAM file we generated takes ~750 GB hard drive 
+  space, which would cost a long time for users to download.
 
 Therefore, we simply provided the results instead.  You are always welcome to 
 [contact us](#Contact) regarding the details on reproducing these results.
