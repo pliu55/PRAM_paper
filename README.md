@@ -147,7 +147,7 @@ assume 2.1 GHz, 40 cores machine
   `reported/`: `known/23_selIgMdl/`
 -->
 
-### Reproducibility 
+### <a name='Human-master-set-reproducibility'></a> Reproducibility
 
 To reproduce the model prediction results, run the follow command:
 
@@ -175,6 +175,25 @@ be named in the same way as the [table](#Human-master-set-key-results) above.
 
 ## <a name='Mouse-hematopoietic-system'></a> Mouse hematopoietic system
 
+### <a name='Mouse-hematopoietic-system-key-results'></a> Key results
+
+Three meta-assembly methods of PRAM were applied to predict intergenic 
+transcript models for mouse hematopoietic system, followed by selection of 
+transcript models that do not overlap with RefSeq genes and have mappability 
+≥ 0.8. All three prediction results are saved in `3_mouse/reported/`:
+
+| file name | PRAM method |
+|:---------:|-------------|
+| [plcf.gtf.gz](3_mouse/reported/plcf.gtf.gz) | pooling + Cufflinks   |
+| [cfmg.gtf.gz](3_mouse/reported/cfmg.gtf.gz) | Cufflinks + Cuffmerge |
+| [cftc.gtf.gz](3_mouse/reported/cftc.gtf.gz) | Cufflinks + TACO      |
+
+<!--
+reported/ is from gata/86_4paper/
+-->
+
+### <a name='Mouse-hematopoietic-system-reproducibility'></a> Reproducibility
+
 <!--
 `3_mouse/`:
 - my run aligned FASTQ with GENCODE vM9
@@ -185,7 +204,6 @@ be named in the same way as the [table](#Human-master-set-key-results) above.
 - If needed, I can upload the ~750G Bam to an FTP server 
 - the way to predict models by PRAM are the same as in human
 - selectiong by mpp and refseq, see manuscript
-reported/ is from gata/86_4paper/
 -->
  
 
