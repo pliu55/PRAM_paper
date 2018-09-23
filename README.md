@@ -184,7 +184,8 @@ be named in the same way as the [table](#Human-master-set-key-results) above.
 ### <a name='Mouse-hematopoietic-system-key-results'></a> Key results
 
 Three meta-assembly methods of PRAM were applied to predict intergenic 
-transcript models for mouse hematopoietic system, followed by selection of 
+transcript models based on thirty-two RNA-seq datasets from mouse 
+hematopoietic system, followed by selection of 
 transcript models that do not overlap with RefSeq genes and have mappability 
 ≥ 0.8. All three prediction results are saved in `3_mouse/reported/`:
 
@@ -195,23 +196,34 @@ transcript models that do not overlap with RefSeq genes and have mappability
 | [cftc.gtf.gz](3_mouse/reported/cftc.gtf.gz) | Cufflinks + TACO      |
 
 <!--
+`3_mouse/`:
 reported/ is from gata/86_4paper/
 -->
 
 ### <a name='Mouse-hematopoietic-system-reproducibility'></a> Reproducibility
 
-<!--
-`3_mouse/`:
-- my run aligned FASTQ with GENCODE vM9
-- ENCODE BAM based on GENCODE vM4 and some entries do not have BAM available, 
-  e.g.  ENCSR000CLU (416B) or ENCSR000CLY (BCell).
-- Therefore, we cannot simply download BAM from ENCODE and run PRAM to reproduce
-  the results reported in the paper.  Instead, I will provided the results.
-- If needed, I can upload the ~750G Bam to an FTP server 
-- the way to predict models by PRAM are the same as in human
-- selectiong by mpp and refseq, see manuscript
--->
- 
+The way to use PRAM to predict intergenic transcript models for mouse 
+hematopoietic system is the same as for [human master set](#Human-master-set).
+You can refer to the script [run.R](2_human/run.R) in 
+[human master set](#Human-master-set) for usage of PRAM. 
+
+We do not provide scripts for automatically reproducing the results because:
+- Some mouse ENCODE RNA-seq datasets do not have alignment BAM files 
+  available, such as 
+  [ENCSR000CLU](https://www.encodeproject.org/experiments/ENCSR000CLU/) and 
+  [ENCSR000CLY](https://www.encodeproject.org/experiments/ENCSR000CLY/)
+- Some mouse ENCODE RNA-seq datasets have alignment BAM files available, such 
+  as, 
+  [ENCSR000CHV](https://www.encodeproject.org/experiments/ENCSR000CHV/) and 
+  [ENCSR000CHY](https://www.encodeproject.org/experiments/ENCSR000CHY/). 
+  But they were based on GENCODE vM4, not vM9, which we used to define known 
+  genes and intergenic regions.
+- The mouse RNA-seq alignment BAM file we generated took ~750 GB hard drive 
+  space, which would take a long time for user to download.
+
+Therefore, we simply provided the results instead.  You are always welcome to 
+[contact us](#Contact) regarding the details on reproducing these results.
+
 
 ## <a name="Reference"></a> Reference
 
