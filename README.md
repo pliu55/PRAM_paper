@@ -7,6 +7,7 @@ Table of Contents
 * [Introduction](#Introduction)
 * [Setup dependent files](#Setup-dependent-files)
 * ['Noise-free' benchmark](#Noise-free-benchmark)
+    * [Key results](#Noise-free-benchmark-key-results)
 * [Human master set](#Human-master-set)
 * [Mouse hematopoietic system](#Mouse-hematopoietic-system)
 * [Reference](#Reference)
