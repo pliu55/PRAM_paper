@@ -104,7 +104,7 @@ buildMetaModel <- function(method, prm) {
                       method    = method,
                       nthreads  = prm$nthr_per_job,
                       tmpdir    = prm$outdir,
-                      keep_tmpdir = T,
+                      keep_tmpdir = F,
                       cufflinks = prm$cufflinks,
                       stringtie = prm$stringtie,
                       taco      = prm$taco,
