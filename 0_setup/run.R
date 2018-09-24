@@ -62,13 +62,13 @@ main <- function() {
   # devtools:install_github(prm$repo)
 
     ## setup external software
-  # setupSoftware(prm)
+    setupSoftware(prm)
 
     ## setup GENCODE
     setupGENCODE(prm)
 
     ## setup genomes for Cufflinks
-  # setupGenome(prm)
+    setupGenome(prm)
 }
 
 
