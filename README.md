@@ -146,11 +146,18 @@ prediction results are saved in `2_human/reported/`:
 | [stmg.gtf.gz](2_human/reported/stmg.gtf.gz) | StringTie + merging   |
 | [cftc.gtf.gz](2_human/reported/cftc.gtf.gz) | Cufflinks + TACO      |
 
+
+We quantified the expression levels of transcript models predicted by 
+'pooling + Cufflinks' together with GENCODE (v24)-annotated transcripts in each
+of the 30 ENCODE RNA-seq datasets.  Their expression levels (in TPM) can be 
+found in [isoforms.tpm.gz](2_human/reported/isoforms.tpm.gz) 
+
 <!--
 assume 2.1 GHz, 40 cores machine
 
 `2_human/`
   `reported/`: `known/23_selIgMdl/`
+               `known/29_colExpr/enc_plcf/isoforms.tpm`
 -->
 
 ### <a name='Human-master-set-reproducibility'></a> Reproducibility
