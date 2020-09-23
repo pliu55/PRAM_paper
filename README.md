@@ -233,7 +233,7 @@ Therefore, we simply provided the results instead.  You are always welcome to
 
 ## <a name="Reference"></a> Reference
 
-PRAM identifies novel hematopoietic transcripts. Peng Liu, Alexandra A. Soukup, Emery H. Bresnick, Colin N. Dewey, and Sündüz Keleş. Manuscript in preparation.
+__PRAM: a novel pooling approach for discovering intergenic transcripts from large-scale RNA sequencing experiments__. Peng Liu, Alexandra A. Soukup, Emery H. Bresnick, Colin N. Dewey, and Sündüz Keleş. _Genome Research_ 2020 https://doi.org/10.1101/gr.252445.119 
 
 
 ## <a name="Contact"></a> Contact
